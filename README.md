@@ -34,12 +34,18 @@ $ gem install invisible_captcha
 
 View code:
 
+In the `form`:
 ```erb
 <%= form_for(@topic) do |f| %>
   <%= f.invisible_captcha :subtitle %>
   <!-- or -->
   <%= invisible_captcha :subtitle, :topic %>
 <% end %>
+```
+
+In the `<head>` tag of your page:
+```erb
+<%= yield :invisible_captcha_styles %>
 ```
 
 Controller code:

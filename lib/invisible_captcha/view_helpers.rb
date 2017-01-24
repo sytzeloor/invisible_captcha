@@ -42,8 +42,10 @@ module InvisibleCaptcha
         InvisibleCaptcha.visual_honeypots
       end
 
-      content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => 'scoped') do
-        "##{container_id} { display:none; }" unless visibility
+      content_for(:invisible_captcha_styles) do
+        content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => 'scoped') do
+          "##{container_id} { display:none; }" unless visibility
+        end
       end
     end
 
